@@ -1,5 +1,3 @@
-// services/api.js
-
 const BASE_URL = 'https://interview.t-alpha.com.br';
 
 const api = {
@@ -25,41 +23,54 @@ const api = {
         return response.json();
     },
 
-    getAllProducts: async () => {
-        const response = await fetch(`${BASE_URL}/api/products/get-all-products`);
+    getAllProducts: async (token) => {
+        const response = await fetch(`${BASE_URL}/api/products/get-all-products`, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
         return response.json();
     },
 
-    getOneProduct: async (id) => {
-        const response = await fetch(`${BASE_URL}/api/products/get-one-product/${id}`);
+    getOneProduct: async (id, token) => {
+        const response = await fetch(`${BASE_URL}/api/products/get-one-product/${id}`, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
         return response.json();
     },
 
-    createProduct: async (productData) => {
+    createProduct: async (productData, token) => {
         const response = await fetch(`${BASE_URL}/api/products/create-product`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify(productData),
         });
         return response.json();
     },
 
-    updateProduct: async (id, productData) => {
+    updateProduct: async (id, productData, token) => {
         const response = await fetch(`${BASE_URL}/api/products/update-product/${id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify(productData),
         });
         return response.json();
     },
 
-    deleteProduct: async (id) => {
+    deleteProduct: async (id, token) => {
         const response = await fetch(`${BASE_URL}/api/products/delete-product/${id}`, {
             method: 'DELETE',
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
         });
         return response.json();
     },
