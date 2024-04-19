@@ -29,7 +29,6 @@ function ProductDetail() {
                     <p>Nome: {product.name}</p>
                     <p>Descrição: {product.description}</p>
                     <p>Preço: {product.price}</p>
-                    {/* Adicione mais informações do produto conforme necessário */}
                 </div>
             ) : (
                 <p>Carregando detalhes do produto...</p>

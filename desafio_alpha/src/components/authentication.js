@@ -45,7 +45,7 @@ function Authentication({ onLogin, isLoggedIn }) {
 
     const toggleRegistrationForm = () => {
         setShowRegistrationForm(!showRegistrationForm);
-        setRegistrationMessage(''); // Limpa a mensagem ao alternar entre os formulários
+        setRegistrationMessage('');
     };
 
     if (isLoggedIn) {

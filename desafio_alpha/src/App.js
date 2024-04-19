@@ -11,7 +11,7 @@ import api from './services/api';
 function App() {
   const [user, setUser] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [loginError, setLoginError] = useState(null); // State for login errors
+  const [loginError, setLoginError] = useState(null);
 
   useEffect(() => {
     const loggedInUser = localStorage.getItem('user');
